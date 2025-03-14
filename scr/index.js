@@ -20,3 +20,14 @@ document.getElementById('registration').addEventListener('submit', function(e) {
         e.preventDefault();  // Stop the form from submitting if invalid.
         return;  // Exit the function to avoid further checks.
     }
+
+      // 4. Validate the passwords and terms agreement
+    // Mama comment: We check if the passwords match and if the terms checkbox is checked.
+    if (password !== passwordCheck) {
+        errorDisplay.innerHTML = "Passwords do not match.";
+        errorDisplay.style.display = 'block';  // Show error message.
+        e.preventDefault();  // Prevent form submission.
+        return;
+    }
+
+    
