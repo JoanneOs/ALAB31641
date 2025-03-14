@@ -10,3 +10,13 @@ document.getElementById('registration').addEventListener('submit', function(e) {
     //  comment: We hide the error message box before starting any validation.
     let errorDisplay = document.getElementById('errorDisplay');
     errorDisplay.style.display = 'none';  // Keep error box hidden unless needed.
+//
+
+// 3. Validate the username
+    // Mama comment: We check if the username is long enough and has at least 2 unique characters.
+    if (username.length < 4 || new Set(username).size < 2) {
+        errorDisplay.innerHTML = "Username must be at least 4 characters with at least 2 unique characters.";
+        errorDisplay.style.display = 'block';  // Show error message.
+        e.preventDefault();  // Stop the form from submitting if invalid.
+        return;  // Exit the function to avoid further checks.
+    }
