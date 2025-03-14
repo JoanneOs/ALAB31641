@@ -22,7 +22,7 @@ document.getElementById('registration').addEventListener('submit', function(e) {
     }
 
       // 4. Validate the passwords and terms agreement
-    // Mama comment: We check if the passwords match and if the terms checkbox is checked.
+    //  We check if the passwords match and if the terms checkbox is checked.
     if (password !== passwordCheck) {
         errorDisplay.innerHTML = "Passwords do not match.";
         errorDisplay.style.display = 'block';  // Show error message.
@@ -30,4 +30,9 @@ document.getElementById('registration').addEventListener('submit', function(e) {
         return;
     }
 
-    
+    if (!terms) {
+        errorDisplay.innerHTML = "You must agree to the terms of use.";
+        errorDisplay.style.display = 'block';  // Show error message.
+        e.preventDefault();  // Stop form submission.
+    }
+});
