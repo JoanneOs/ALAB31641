@@ -6,3 +6,7 @@ document.getElementById('registration').addEventListener('submit', function(e) {
     let passwordCheck = document.querySelector('input[name="passwordCheck"]').value;
     let terms = document.querySelector('input[name="terms"]').checked;
     
+     // 2. Hide the error display section by default
+    //  comment: We hide the error message box before starting any validation.
+    let errorDisplay = document.getElementById('errorDisplay');
+    errorDisplay.style.display = 'none';  // Keep error box hidden unless needed.
